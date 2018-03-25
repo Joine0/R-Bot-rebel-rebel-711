@@ -221,7 +221,7 @@ ${guild.memberCount} أعضآء السيرفر
 });
 
 clinet.on('message', message => {
-if (message.content.startsWith("R-uptime")) {
+if (message.content === ("R-uptime")) {
     let uptime = client.uptime;
 
     let days = 0;
