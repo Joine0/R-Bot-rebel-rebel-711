@@ -263,15 +263,6 @@ if (message.content === ("R-uptime")) {
 }
 });
 
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setThumbnail(guild.author.avatarURL)
-  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك **
-                              "R-Bot"   ونشكر تعآملك مع آر بوت `)
-      guild.owner.send(embed)
-});
-
 
 
 client.on("message", (message) => {
