@@ -220,6 +220,7 @@ ${guild.memberCount} أعضآء السيرفر
 `)
 });
 
+var prefix = "R-"
 clinet.on('message', message => {
 if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
