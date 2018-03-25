@@ -220,7 +220,7 @@ ${guild.memberCount} أعضآء السيرفر
 `)
 });
 
-clinet.on('message', message => {
+client.on('message', message => {
 if (message.content === ("R-uptime")) {
     let uptime = client.uptime;
 
