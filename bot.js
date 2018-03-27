@@ -312,6 +312,8 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 if (message.content === ("R-Ch")) {
 if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send("**أنت ليس لديك برمشن** `ADMINISTRATOR`" );
+	      if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
     message.guild.createChannel('hour', 'voice');
     message.guild.createChannel('date', 'voice');
     message.guild.createChannel('member', 'voice');
@@ -401,6 +403,7 @@ message.channel.sendMessage("تم تفعيل الروم بنجاح");
    client.on('message', message => {
     if (message.channel.guild) {
    if (message.content === 'R-delete ro') {
+	         if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return ;
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return   ;
     message.guild.roles.forEach(x=>{
     x.delete()
@@ -411,6 +414,8 @@ message.channel.sendMessage("تم تفعيل الروم بنجاح");
     
     	client.on('message', message => {
 	       if (message.content === ("R-delete ro")) {
+		             if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
+
 	                     if(!message.member.hasPermission('ADMINISTRATOR')) return   message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
     
      if (message.author.bot) return;
@@ -427,6 +432,7 @@ message.channel.sendMessage("تم تفعيل الروم بنجاح");
    client.on('message', message => {
     if (message.channel.guild) {
    if (message.content === 'R-delete vc') {
+	         if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return   message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
       message.guild.createChannel('general', 'text');
     message.guild.createChannel('general', 'voice');
@@ -475,7 +481,8 @@ client.on("message", message => {
     if(message.content.startsWith(prefix + 'v2')) {
      let args = message.content.split(" ").slice(1);
        var nam = args.join(' ');
-    
+          if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
       if (!nam) return message.channel.send(`<@${message.author.id}> يجب عليك ادخال اسم`).then(msg => msg.delete(10000))
       message.guild.createChannel(nam, 'voice').then(c => setTimeout(() => c.delete(), 120000)) // كل 60 تساوي دقيقة عدل عليها الوقت لي تبيه 
@@ -488,7 +495,8 @@ client.on("message", message => {
     if(message.content.startsWith(prefix + 'v4')) {
      let args = message.content.split(" ").slice(1);
        var nam = args.join(' ');
-    
+          if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
       if (!nam) return message.channel.send(`<@${message.author.id}> يجب عليك ادخال اسم`).then(msg => msg.delete(10000))
       message.guild.createChannel(nam, 'voice').then(c => setTimeout(() => c.delete(), 240000)) // كل 60 تساوي دقيقة عدل عليها الوقت لي تبيه 
@@ -500,7 +508,8 @@ client.on("message", message => {
     if(message.content.startsWith(prefix + 'c2')) {
      let args = message.content.split(" ").slice(1);
        var nam = args.join(' ');
-    
+          if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
       if (!nam) return message.channel.send(`<@${message.author.id}> يجب عليك ادخال اسم`).then(msg => msg.delete(10000))
       message.guild.createChannel(nam, 'chat').then(c => setTimeout(() => c.delete(), 120000)) // كل 60 تساوي دقيقة عدل عليها الوقت لي تبيه 
@@ -513,7 +522,8 @@ client.on("message", message => {
     if(message.content.startsWith(prefix + 'c4')) {
      let args = message.content.split(" ").slice(1);
        var nam = args.join(' ');
-    
+          if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
       if (!nam) return message.channel.send(`<@${message.author.id}> يجب عليك ادخال اسم`).then(msg => msg.delete(10000))
       message.guild.createChannel(nam, 'chat').then(c => setTimeout(() => c.delete(), 120000)) // كل 60 تساوي دقيقة عدل عليها الوقت لي تبيه 
@@ -524,6 +534,8 @@ client.on("message", message => {
 client.on('message', message => {
 	
 	if (message.content === "R-Build RRfrr") {
+		      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
+
 	              if(!message.channel.guild) return message.reply('** This command only for servers **');
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
 		          const embed = new Discord.RichEmbed()
@@ -569,6 +581,8 @@ client.on('message', message => {
 
 client.on('message', message => {
          if (message.content === "R-Build R") {
+		       if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
+
                        if(!message.channel.guild) return message.reply('** This command only for servers **');
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
 	const embed = new Discord.RichEmbed()
@@ -632,6 +646,8 @@ message.guild.createChannel('▓▬▬▬♚▬▬▬▓', 'voice');
 client.on('message', message => {
 	
 	if (message.content === "R-Build Rr") {
+		      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
+
 	              if(!message.channel.guild) return message.reply('** This command only for servers **');
 	                         if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
 		          const embed = new Discord.RichEmbed()
@@ -736,6 +752,7 @@ var prefix = 'R-';
 
 client.on('message', message => {
     if(message.content === prefix + 'cr2') {
+	    		      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
       message.guild.createRole({
@@ -1255,6 +1272,8 @@ var prefix = 'R-';
 
 client.on('message', message => {
     if(message.content === prefix + 'cr3') {
+	    		      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
+
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
       message.guild.createRole({
@@ -1925,6 +1944,7 @@ client.on('message', message => {
 var prefix = "R-"
 client.on('message', message => {
     if(message.content === prefix + 'cr1') {
+	    		      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_ROLES ` **").then(msg => msg.delete(6000))
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
       message.guild.createRole({
