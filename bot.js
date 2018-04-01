@@ -445,36 +445,33 @@ message.channel.sendMessage("تم تفعيل الروم بنجاح");
     });
 
 
-
+client.on('guildCreate', guild => {
+    
+  var rebel = new Discord.RichEmbed()
+  .setColor(000000)
+		.setDescription('** شكرآ لك لإضافة بوت الرومات الخاص بنا , آستمتع  **')
+		.setFooter(" R-Bot Team ")
+      guild.owner.send(rebel);
+});
 
 
 client.on('message', message => {
 
   if (message.content.startsWith("R-sug")) {
+
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
+                if (!args) return message.reply('** ضع أقترآحك  **').catch(console.error);
   client.channels.get("425722207222628373").send(
       "\n" + "" + "● السيرفر :" + "" +
       "\n" + "" + "» " + message.guild.name + "" +
       "\n" + "" + " ● المرسل : " + "" +
       "\n" + "" + "» " + message.author.tag + "" +
       "\n" + "" + " ● الرسالة : " + "" +
-      "\n" + "" + args + "")
+      "\n" + "" + args + "");
+      message.reply("** تم إرسآل أقترآحك بنجاح **");
   }
   });
-
-	client.on('message', message => {
-  if (message.content.startsWith("R-sug")) {
-       if(!message.author.id === '') return;
-     if (message.author.bot) return;
-
-               message.channel.sendMessage({embed: new Discord.RichEmbed()
-     .setColor('#502faf').setAuthor(`${message.author.username}'`, message.author.avatarURL).setDescription('`` تم إرسآل أقترآحك بنجاح ``')});
- 
-
-          
-        }
-});
 
 var prefix= "R-";
 client.on("message", message => {
