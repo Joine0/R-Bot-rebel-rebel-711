@@ -170,7 +170,6 @@ client.on('message', function(message) {
     if (message.author.boss) return;
     if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
     if (command == "role") {
     if (!message.channel.guild) return;
     if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return message.reply("**:no_entry_sign:انت لا تملك صلاحيات **").then(msg => msg.delete(5000));;
